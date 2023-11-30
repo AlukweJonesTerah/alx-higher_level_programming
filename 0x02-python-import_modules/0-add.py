@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-add_0 = __import__('add_0')
 if __name__ == "__main__":
-    import sys
+    from add_0 import add
     a = 1
     b = 2
-    c = add_0.add(a, b)
+    c = add(a, b)
     print('{} + {} = {}'.format(a, b, c))
