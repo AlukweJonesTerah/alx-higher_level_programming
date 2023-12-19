@@ -29,7 +29,7 @@ printf("  value: %s\n", str);
 void
 print_python_bytes(PyObject * p)
 {
-    long
+long
 unsigned
 int
 size;
