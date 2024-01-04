@@ -69,11 +69,7 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return ''
         else:
-            shape = []
-            for i in range(self.__height):
-                [shape.append(self.print_symbol) for j in range(self.__width)]
-                if i != self.__height - 1:
-                    shape.append('\n')
+            shape = (str(self.print_symbol) * self.__width + '\n') * self.__height
             return ''.join(shape)
 
     def __repr__(self):
@@ -88,3 +84,18 @@ class Rectangle:
         """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Static method that return bigger or equal recs"""
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        area_1 = rect_1.area()
+        area_2 = rect_2.area()
+
+        if area_1 >= area_2:
+            return rect_1
+        else:
+            return rect_2
