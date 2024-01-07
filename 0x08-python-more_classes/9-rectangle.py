@@ -108,4 +108,5 @@ class Rectangle:
             cls: equivalent to self but of class method
         Returns: width==height==size
         """
+
         return cls(size, size)
