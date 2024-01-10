@@ -11,16 +11,18 @@ Usage:
     $ cat logfile.txt | ./metrics_script.py
 """
 
-def print_metrics(total_size, status_counts):
+
+def print_metrics(size, status_codes):
     """Print accumulated metrics.
 
     Args:
-        total_size (int): Total file size up to the current point.
-        status_counts (dict): Count of encountered status codes.
+        size (int): Total file size up to the current point.
+        status_codes (dict): Count of encountered status codes.
     """
-    print("Total file size: {}".format(total_size))
-    for code, count in sorted(status_counts.items()):
+    print("Total file size: {}".format(size))
+    for code, count in sorted(status_codes.items()):
         print("Status {}: {}".format(code, count))
+
 
 if __name__ == "__main__":
     import sys
