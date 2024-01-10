@@ -2,6 +2,8 @@
 """module to return object in JSON reps a string"""
 
 import json
+
+
 def from_json_string(my_str):
     """
     Args:
