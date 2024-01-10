@@ -9,6 +9,12 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
+        """
+        Args:
+            attrs: attribute
+        Returns: json
+
+        """
         if attrs is None:
             return {
                 'first_name': self.first_name,
@@ -19,5 +25,10 @@ class Student:
             return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
 
     def reload_from_json(self, json_data):
+        """
+        Args:
+            json_data: data
+        Returns: set attributes
+        """
         for key, value in json_data.item():
             setattr(self, key, value)
