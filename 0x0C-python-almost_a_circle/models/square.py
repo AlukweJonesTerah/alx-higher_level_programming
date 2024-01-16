@@ -38,12 +38,11 @@ class Square(Rectangle):
         Returns:
             dict: Dictionary with keys 'id', 'size', 'x', 'y'.
         """
-        return {
-            'id': self.id,
-            'size': self.size,
-            'x': self.x,
-            'y': self.y
-        }
+        return {'x': getattr(self, "x"),
+                'y': getattr(self, "y"),
+                'id': getattr(self, "id"),
+                'height': getattr(self, "height"),
+                'width': getattr(self, "width")}
 
     def __str__(self):
         """Override the __str__ method."""
@@ -62,14 +61,14 @@ class Square(Rectangle):
             **kwargs (dict): Key-worded arguments representing attribute-value pairs.
         """
         if len(args):
-            for i, arg in enumerate(args):
-                if i == 0:
+            for a, arg in enumerate(args):
+                if a == 0:
                     self.id = arg
-                elif i == 1:
+                elif a == 1:
                     self.size = arg
-                elif i == 2:
+                elif a == 2:
                     self.x = arg
-                elif i == 3:
+                elif a == 3:
                     self.y = arg
         else:
             for key, value in kwargs.items():
