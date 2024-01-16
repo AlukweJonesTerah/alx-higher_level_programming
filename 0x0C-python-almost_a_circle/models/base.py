@@ -4,7 +4,6 @@ import csv
 import json
 import turtle
 
-
 class Base:
     """Base class for providing a unique identifier of object"""
     __nb_objects = 0

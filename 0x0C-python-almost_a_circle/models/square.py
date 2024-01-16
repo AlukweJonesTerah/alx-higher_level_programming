@@ -38,11 +38,12 @@ class Square(Rectangle):
         Returns:
             dict: Dictionary with keys 'id', 'size', 'x', 'y'.
         """
-        return {'x': getattr(self, "x"),
-                'y': getattr(self, "y"),
-                'id': getattr(self, "id"),
-                'height': getattr(self, "height"),
-                'width': getattr(self, "width")}
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
+        }
 
     def __str__(self):
         """Override the __str__ method."""
